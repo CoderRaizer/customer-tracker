@@ -73,6 +73,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		Session currentSession = sessionFactory.getCurrentSession();
 		
 		// delete Object with primary key
+		@SuppressWarnings("rawtypes")
 		Query theQuery = 
 			  currentSession.createQuery("delete from Customer where id=:customerId");
 		theQuery.setParameter("customerId", theId);
